@@ -1,0 +1,96 @@
+{
+    "name": "wordpress-headless",
+    "version": "0.1.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "build": "rimraf public/js && npm run build:typescript && npm run build:rollup && npm run build:service-worker",
+        "build:rollup": "rollup -c etc/rollup.production.js",
+        "build:rollup:watch": "rollup -c etc/rollup.development.js -w",
+        "build:service-worker": "node bin/workbox-build.js && rollup -c etc/rollup.service-worker.js && rimraf tmp",
+        "build:typescript": "tsc --build tsconfig.json",
+        "build:typescript:watch": "tsc --build tsconfig.json -w",
+        "build:watch": "npm-run-all -p build:typescript:watch build:rollup:watch",
+        "commit": "git-cz",
+        "push": "npm run save && git push",
+        "save": "git add . && git commit -m \"refactor(headless-wordpress): save\"",
+        "server": "wds --app-index public/index.html --open --root-dir public --watch",
+        "start": "npm run build:typescript && npm-run-all -p build:watch server",
+        "start:production": "npm run build && npm run server",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/anoblet/web-starter-kit.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/anoblet/web-starter-kit/issues"
+    },
+    "homepage": "https://github.com/anoblet/web-starter-kit#readme",
+    "devDependencies": {
+        "@rollup/plugin-commonjs": "^21.0.0",
+        "@rollup/plugin-json": "^4.1.0",
+        "@rollup/plugin-node-resolve": "^7.1.1",
+        "@rollup/plugin-replace": "^2.4.2",
+        "@web/dev-server": "^0.1.2",
+        "browser-sync": "^2.26.7",
+        "commitizen": "^4.0.3",
+        "compression": "^1.7.4",
+        "connect-history-api-fallback": "^1.6.0",
+        "cz-conventional-changelog": "^3.1.0",
+        "husky": "^4.3.0",
+        "lint-staged": "^10.4.0",
+        "npm-run-all": "^4.1.5",
+        "prettier": "^2.1.2",
+        "rimraf": "^3.0.2",
+        "rollup": "^2.58.0",
+        "rollup-plugin-minify-html-literals": "^1.2.3",
+        "rollup-plugin-node-globals": "^1.4.0",
+        "rollup-plugin-polyfill-node": "^0.7.0",
+        "rollup-plugin-size": "^0.2.2",
+        "rollup-plugin-terser": "^5.2.0",
+        "typescript": "^4.0.3",
+        "workbox-build": "^5.0.0"
+    },
+    "config": {
+        "commitizen": {
+            "path": "./node_modules/cz-conventional-changelog"
+        }
+    },
+    "dependencies": {
+        "@adobe/lit-mobx": "^2.0.0",
+        "@conversionxl/cxl-lumo-styles": "^1.1.0-alpha.7",
+        "@vaadin/router": "^1.7.4",
+        "@vaadin/vaadin-accordion": "^21.0.3",
+        "@vaadin/vaadin-app-layout": "^21.0.3",
+        "@vaadin/vaadin-combo-box": "^21.0.3",
+        "@vaadin/vaadin-dialog": "^21.0.3",
+        "@vaadin/vaadin-form-layout": "^21.0.3",
+        "@vaadin/vaadin-grid": "^21.0.3",
+        "@vaadin/vaadin-icons": "^21.0.3",
+        "@vaadin/vaadin-list-box": "^21.0.3",
+        "@vaadin/vaadin-login": "^21.0.3",
+        "@vaadin/vaadin-notification": "^21.0.3",
+        "@vaadin/vaadin-select": "^21.0.3",
+        "@vaadin/vaadin-split-layout": "^21.0.3",
+        "@vaadin/vaadin-tabs": "^21.0.3",
+        "@woocommerce/woocommerce-rest-api": "^1.0.1",
+        "date-fns": "^2.25.0",
+        "lit": "^2.0.2",
+        "lit-element": "^3.0.1",
+        "lodash-es": "^4.17.21",
+        "mobx": "^6.3.5",
+        "object-path": "^0.11.8",
+        "workbox-window": "^5.0.0"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "*.{css,html,js,md,ts}": "prettier --write"
+    }
+}
