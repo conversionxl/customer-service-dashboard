@@ -1,5 +1,5 @@
 {
-    "name": "wordpress-headless",
+    "name": "@conversionxl/customer-service-dashboard",
     "version": "0.1.0",
     "description": "",
     "main": "index.js",
@@ -15,20 +15,20 @@
         "push": "npm run save && git push",
         "save": "git add . && git commit -m \"refactor(headless-wordpress): save\"",
         "server": "wds --app-index public/index.html --open --root-dir public --watch",
-        "start": "npm run build:typescript && npm-run-all -p build:watch server",
+        "start": "npm run build && npm-run-all -p build:watch server",
         "start:production": "npm run build && npm run server",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/anoblet/web-starter-kit.git"
+        "url": "git+https://github.com/conversionxl/customer-service-dashboard.git"
     },
     "author": "",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/anoblet/web-starter-kit/issues"
+        "url": "https://github.com/conversionxl/customer-service-dashboard/issues"
     },
-    "homepage": "https://github.com/anoblet/web-starter-kit#readme",
+    "homepage": "https://github.com/conversionxl/customer-service-dashboard#readme",
     "devDependencies": {
         "@rollup/plugin-commonjs": "^21.0.0",
         "@rollup/plugin-json": "^4.1.0",
