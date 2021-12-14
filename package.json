@@ -62,6 +62,7 @@
     "dependencies": {
         "@adobe/lit-mobx": "^2.0.0",
         "@conversionxl/cxl-lumo-styles": "^1.1.0-alpha.7",
+        "@vaadin/menu-bar": "^22.0.1",
         "@vaadin/router": "^1.7.4",
         "@vaadin/vaadin-accordion": "^21.0.3",
         "@vaadin/vaadin-app-layout": "^21.0.3",

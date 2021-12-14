@@ -25,6 +25,8 @@ import "./components/subscription/cxl-subscription-view";
 
 import "./components/wp-login";
 
+import "./components/wp-page";
+
 const guard = (context, commands) => {};
 
 export const routes = [
@@ -68,6 +70,10 @@ export const routes = [
             { path: "/:orderId/refunds", component: "cxl-order-refund" },
             { path: "/:orderId/refunds/:id", component: "cxl-refund-view" },
         ],
+    },
+    {
+        path: "/pages",
+        children: [{ path: "/:id", component: "wp-page" }],
     },
     {
         path: "/refund",
