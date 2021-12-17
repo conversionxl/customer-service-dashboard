@@ -1,7 +1,7 @@
 import "@vaadin/menu-bar";
 import { css, customElement, html, property } from "lit-element";
 import { nothing, render } from "lit-html";
-import { cache } from "lit-html/directives/cache";
+import { cache } from "lit-html/directives/cache.js";
 import { ViewElement } from "../../base-elements/ViewElement";
 import { config } from "../../config";
 import { Order } from "../../models";

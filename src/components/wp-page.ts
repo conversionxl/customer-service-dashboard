@@ -1,7 +1,7 @@
 import { customElement, html, property } from "lit-element";
 import { BaseElement } from "../base-elements/BaseElement";
 import { config } from "../config";
-import { unsafeHTML } from "lit-html/directives/unsafe-html";
+import { unsafeHTML } from "lit-html/directives/unsafe-html.js";
 
 @customElement("wp-page")
 export class WPPageElement extends BaseElement {
