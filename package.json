@@ -17,7 +17,8 @@
         "server": "wds --app-index public/index.html --open --root-dir public --watch",
         "start": "npm run build && npm-run-all -p build:watch server",
         "start:production": "npm run build && npm run server",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "npm run test:visual",
+        "test:visual": "web-test-runner src/**/*.test.js --node-resolve"
     },
     "repository": {
         "type": "git",
@@ -35,6 +36,9 @@
         "@rollup/plugin-node-resolve": "^7.1.1",
         "@rollup/plugin-replace": "^2.4.2",
         "@web/dev-server": "^0.1.2",
+        "@web/dev-server-esbuild": "^0.2.16",
+        "@web/test-runner": "^0.13.22",
+        "@web/test-runner-visual-regression": "^0.6.4",
         "browser-sync": "^2.26.7",
         "commitizen": "^4.0.3",
         "compression": "^1.7.4",
