@@ -25,7 +25,7 @@ import "./components/subscription/cxl-subscription-view";
 
 import "./components/wp-login";
 
-import "./components/wp-page";
+import "./components/page/wp-page";
 
 const guard = (context, commands) => {};
 

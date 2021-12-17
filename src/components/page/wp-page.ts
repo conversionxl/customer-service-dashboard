@@ -1,18 +1,23 @@
-import { customElement, html, property } from "lit-element";
-import { BaseElement } from "../base-elements/BaseElement";
-import { config } from "../config";
-import { unsafeHTML } from "lit-html/directives/unsafe-html.js";
+import { html, nothing } from "lit";
+import { customElement, property } from "lit/decorators.js";
+import { unsafeHTML } from "lit/directives/unsafe-html.js";
+import { BaseElement } from "../../base-elements/BaseElement";
+import { config } from "../../config";
+import { notify } from "../../utilities";
 
 @customElement("wp-page")
 export class WPPageElement extends BaseElement {
     @property({ type: Object }) page;
-
     @property({ type: Object }) substitute = {};
+    @property({ type: Boolean }) error;
 
     location;
 
     render() {
-        return html`${unsafeHTML(this.page?.content)}`;
+        return html`
+            ${this.error ? html`Something went wrong.` : nothing}
+            ${unsafeHTML(this.page?.content)}
+        `;
     }
 
     async firstUpdated(_changedProperties: any) {
@@ -22,12 +27,17 @@ export class WPPageElement extends BaseElement {
             this.page = { ...this.location.params };
         }
 
-        const content = this.parse(await this.get());
+        try {
+            const content = this.parse(await this.get());
 
-        this.page = {
-            ...this.page,
-            ...{ content },
-        };
+            this.page = {
+                ...this.page,
+                ...{ content },
+            };
+        } catch (error) {
+            this.error = error;
+            notify({ message: this.error, theme: "error" });
+        }
     }
 
     async get() {

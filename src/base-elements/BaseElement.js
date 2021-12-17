@@ -1,7 +1,6 @@
 import { Router } from "@vaadin/router";
 import "@vaadin/vaadin-notification";
-import { css, html, LitElement } from "lit-element";
-import { render } from "lit-html";
+import { css, html, LitElement, render } from "lit";
 import { baseStyle } from "../base-style";
 import { navigate } from "../utilities";
 

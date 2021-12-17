@@ -1,9 +1,9 @@
 import { visualDiff } from "@web/test-runner-visual-regression";
-import "./cxl-dashboard";
+import "./wp-page";
 
 it("can diff an element", async () => {
-    const element = document.createElement("cxl-dashboard");
+    const element = document.createElement("wp-page");
     document.body.appendChild(element);
 
-    await visualDiff(element, "cxl-dashboard");
+    await visualDiff(element, "wp-page");
 });
