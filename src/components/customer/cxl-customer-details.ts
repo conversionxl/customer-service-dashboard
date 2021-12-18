@@ -1,5 +1,5 @@
 import "@vaadin/vaadin-dialog";
-import "@vaadin/vaadin-text-field/vaadin-email-field";
+import "@vaadin/email-field";
 import { css, customElement, html, property, query } from "lit-element";
 import { nothing, render } from "lit-html";
 import objectPath from "object-path";
