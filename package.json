@@ -4,7 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "build": "rimraf public/js && npm run build:typescript && npm run build:rollup && npm run build:service-worker",
+        "build": "rimraf lib public/js && npm run build:typescript && npm run build:rollup && npm run build:service-worker",
         "build:rollup": "rollup -c etc/rollup.production.js",
         "build:rollup:watch": "rollup -c etc/rollup.development.js -w",
         "build:service-worker": "node bin/workbox-build.js && rollup -c etc/rollup.service-worker.js && rimraf tmp",
@@ -18,7 +18,7 @@
         "start": "npm run build && npm-run-all -p build:watch server",
         "start:production": "npm run build && npm run server",
         "test": "npm run test:visual",
-        "test:visual": "web-test-runner src/**/*.test.js --node-resolve"
+        "test:visual": "web-test-runner lib/**/*.test.js --node-resolve"
     },
     "repository": {
         "type": "git",
