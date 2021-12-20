@@ -23,7 +23,7 @@ import "./components/subscription/cxl-subscription-grid";
 import "./components/subscription/cxl-subscription-switch";
 import "./components/subscription/cxl-subscription-view";
 
-import "./components/wp-login";
+import "./components/login/wp-login";
 
 import "./components/page/wp-page";
 

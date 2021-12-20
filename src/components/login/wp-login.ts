@@ -1,8 +1,9 @@
 import "@vaadin/vaadin-login";
-import { css, customElement, html, query } from "lit-element";
-import { config } from "../config";
-import { navigate } from "../utilities";
-import { BaseElement } from "../base-elements/BaseElement";
+import { css, html } from "lit";
+import { customElement, query } from "lit/decorators.js";
+import { BaseElement } from "../../base-elements/BaseElement";
+import { config } from "../../config";
+import { navigate } from "../../utilities";
 
 @customElement("wp-login")
 export class WPLoginElement extends BaseElement {
