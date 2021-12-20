@@ -9,7 +9,7 @@ import { version } from "../package.json";
 const commitHash = execSync("git rev-parse --short HEAD").toString().trim();
 
 module.exports = {
-    input: ".tsc/index.js",
+    input: "lib/index.js",
     output: {
         dir: "./public/js",
         format: "esm",
