@@ -1,4 +1,4 @@
-import WooCommerceRestApi from "@woocommerce/woocommerce-rest-api";
+import WooCommerceRestApi from "@woocommerce/woocommerce-rest-api/index.mjs";
 import { config } from "./config";
 
 export const WooCommerce = ({ version } = { version: "wc/v3" }) => {
