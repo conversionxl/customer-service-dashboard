@@ -64,7 +64,7 @@ export class WPLoginElement extends BaseElement {
             body: formData,
         })
             .then(async (response) => {
-                const { token } = await response.json();
+                const { token } = (await response.json()).data;
                 localStorage.setItem("token", token);
                 navigate("/");
             })
