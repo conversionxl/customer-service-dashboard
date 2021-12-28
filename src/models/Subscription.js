@@ -1,10 +1,10 @@
 import { BaseItemModel } from "../models";
 import { formatDate } from "../utilities";
-import { WooCommerce } from "../WooCommerce";
+// import { WooCommerce } from "../WooCommerce";
 import { capitalize } from "lodash-es";
 
 export class Subscription extends BaseItemModel {
-    _version = "wc/v1";
+    _version = 1;
 
     get _endpoint() {
         return `subscriptions/${this.id}`;
@@ -58,14 +58,14 @@ export class Subscription extends BaseItemModel {
         return `${this.total} ${this.currency}`;
     }
 
-    async put(data = this._data) {
-        this._lastResponse = await WooCommerce({ version: this._version }).put(
-            this._endpoint,
-            data
-        );
+    // async put(data = this._data) {
+    //     this._lastResponse = await WooCommerce({ version: this._version }).put(
+    //         this._endpoint,
+    //         data
+    //     );
 
-        return this;
-    }
+    //     return this;
+    // }
 
     _getViewPath() {
         return `subscriptions/${this.id}`;

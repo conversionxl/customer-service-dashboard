@@ -1,8 +1,8 @@
-import { formatDate, measure } from "../utilities";
-import { WooCommerce } from "../WooCommerce";
+import { BaseItemModel } from "../models";
+import { formatDate } from "../utilities";
+// import { WooCommerce } from "../WooCommerce";
 import { Customer } from "./Customer";
 import { Order } from "./Order";
-import { BaseItemModel } from "../models";
 
 export class Refund extends BaseItemModel {
     get _endpoint() {
@@ -107,14 +107,14 @@ export class Refund extends BaseItemModel {
         return this._order;
     }
 
-    async save() {
-        return await WooCommerce().post(`orders/${this.order.id}/refunds`, {
-            amount: String(this.amount),
-            api_refund: false,
-            line_items: this.line_items,
-            reason: this.reason,
-        });
-    }
+    // async save() {
+    //     return await WooCommerce().post(`orders/${this.order.id}/refunds`, {
+    //         amount: String(this.amount),
+    //         api_refund: false,
+    //         line_items: this.line_items,
+    //         reason: this.reason,
+    //     });
+    // }
 
     _getViewPath() {
         console.log(this);
