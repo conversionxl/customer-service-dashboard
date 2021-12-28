@@ -5,7 +5,7 @@ import {
     SubscriptionCollection,
 } from "../models";
 import { formatDate, measure } from "../utilities";
-import { WooCommerce } from "../WooCommerce";
+// import { WooCommerce } from "../WooCommerce";
 
 export class Customer extends BaseItemModel {
     _response;
@@ -138,16 +138,16 @@ export class Customer extends BaseItemModel {
         return this._subscriptions;
     }
 
-    async save() {
-        await measure({ endpoint: this._endpoint }, async () => {
-            this._response = await WooCommerce({ version: this._version }).put(
-                this._endpoint,
-                this._updates
-            );
-        });
+    // async save() {
+    //     await measure({ endpoint: this._endpoint }, async () => {
+    //         this._response = await WooCommerce({ version: this._version }).put(
+    //             this._endpoint,
+    //             this._updates
+    //         );
+    //     });
 
-        return this;
-    }
+    //     return this;
+    // }
 
     _getViewPath(item) {
         return this._endpoint;
