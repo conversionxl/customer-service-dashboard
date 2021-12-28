@@ -1,12 +1,12 @@
 import { logout, measure, notify } from "../utilities";
-import { WooCommerce } from "../WooCommerce";
+import { wooCommerce } from "../WooCommerce";
 import { html } from "lit-html";
 
 export class BaseCollectionModel {
     _itemType;
     _items;
     _total;
-    _version = "wc/v3";
+    _version = 3;
     params;
 
     get items() {
@@ -25,12 +25,12 @@ export class BaseCollectionModel {
         await measure(
             { endpoint: this._endpoint, params: this.params },
             async () => {
-                const { data, headers } = await WooCommerce({
-                    version: this._version,
-                })
-                    .get(this._endpoint, this.params)
+                const response = await wooCommerce
+                    .get({
+                        endpoint: this._endpoint,
+                        params: this.params,
+                    })
                     .catch((error) => {
-                        // Instance host may have changed, so logout and try again
                         if (error.response.status === 403) {
                             notify({
                                 message: html`
@@ -49,7 +49,7 @@ export class BaseCollectionModel {
                         }
                     });
 
-                this._items = data.map((item) => {
+                this._items = response.data.map((item) => {
                     const _item = new this._itemType(item);
 
                     _item.mapCollection(this);
@@ -57,7 +57,7 @@ export class BaseCollectionModel {
                     return _item;
                 });
 
-                this._total = Number(headers["x-wp-total"]);
+                this._total = Number(response.headers["x-wp-total"]);
             }
         );
 

@@ -79,7 +79,6 @@
         "@vaadin/vaadin-select": "^21.0.3",
         "@vaadin/vaadin-split-layout": "^21.0.3",
         "@vaadin/vaadin-tabs": "^21.0.3",
-        "@woocommerce/woocommerce-rest-api": "^1.0.1",
         "date-fns": "^2.25.0",
         "lit": "^2.0.2",
         "lit-element": "^3.0.1",

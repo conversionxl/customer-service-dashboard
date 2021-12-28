@@ -1,6 +1,6 @@
 import { BaseItemModel } from "../models";
 import { formatDate } from "../utilities";
-import { WooCommerce } from "../WooCommerce";
+// import { WooCommerce } from "../WooCommerce";
 
 export class Coupon extends BaseItemModel {
     _data = {};
@@ -31,12 +31,12 @@ export class Coupon extends BaseItemModel {
         return this._data.id;
     }
 
-    async get() {
-        const { data } = await WooCommerce().get(this._endpoint);
-        Object.assign(this._data, data);
+    // async get() {
+    //     const { data } = await WooCommerce().get(this._endpoint);
+    //     Object.assign(this._data, data);
 
-        this._getCompleted = true;
+    //     this._getCompleted = true;
 
-        return this;
-    }
+    //     return this;
+    // }
 }
