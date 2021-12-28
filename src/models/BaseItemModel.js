@@ -1,10 +1,10 @@
-import { WooCommerce } from "../WooCommerce";
+import { wooCommerce } from "../WooCommerce";
 import { measure } from "../utilities";
 import { BaseModel } from "./BaseModel";
 
 export class BaseItemModel extends BaseModel {
     _data = {};
-    _version = "wc/v3";
+    _version = 3;
 
     constructor(args) {
         super();
@@ -13,14 +13,10 @@ export class BaseItemModel extends BaseModel {
 
     async get() {
         await measure({ endpoint: this._endpoint }, async () => {
-            const { data } = await WooCommerce({ version: this._version })
-                .get(this._endpoint)
-                .catch((error) => {
-                    // Instance host may have changed, so logout and try again
-                    if (error.response.status === 403) {
-                        logout();
-                    }
-                });
+            const { data } = await wooCommerce.get({
+                endpoint: this._endpoint,
+            });
+
             Object.assign(this._data, data);
         });
 
