@@ -17,7 +17,7 @@
         "server": "wds --app-index public/index.html --open --root-dir public --watch",
         "start": "npm run build && npm-run-all -p build:watch server",
         "start:production": "npm run build && npm run server",
-        "test": "web-test-runner src/**/*.test.js --node-resolve"
+        "test": "npm run build && web-test-runner .tsc/**/*.test.js --node-resolve"
     },
     "repository": {
         "type": "git",
