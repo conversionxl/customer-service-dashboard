@@ -2,7 +2,7 @@ import { config } from "./config";
 
 class WooCommerce {
     async get({ endpoint, params = {}, version = 3 }) {
-        var queryString = Object.keys(params)
+        const queryString = Object.keys(params)
             .map((key) => key + "=" + params[key])
             .join("&");
 
