@@ -3,16 +3,18 @@ import { visualRegressionPlugin } from "@web/test-runner-visual-regression/plugi
 export default {
     testRunnerHtml: (testFramework) =>
         `
+            <!DOCTYPE html>
             <html>
                 <body>
-                    <script>window.localStorage.token = ""</script>
+                    <script>window.localStorage.token = "MyToken"</script>
                     <script type="module" src="${testFramework}"></script>
                 </body>
             </html>
         `,
     plugins: [
         visualRegressionPlugin({
-            update: process.argv.includes("--update-visual-baseline"),
+            manual: process.argv.includes("--manual"),
+            update: process.argv.includes('--update-visual-baseline'),
         }),
     ],
 };

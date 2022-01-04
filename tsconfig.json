@@ -2,11 +2,11 @@
     "compilerOptions": {
         "allowJs": true,
         "experimentalDecorators": true,
-        "lib": ["DOM", "ES2017"],
-        "module": "ESNext",
+        "lib": ["dom", "es2017"],
+        "module": "esnext",
         "moduleResolution": "node",
-        "outDir": ".tsc",
-        "target": "ES2017"
+        "outDir": "build",
+        "target": "es2017"
     },
     "exclude": ["src/service-worker.js"],
     "include": ["src/**/*.js", "src/**/*.ts"]
