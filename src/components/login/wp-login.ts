@@ -15,11 +15,9 @@ export class WPLoginElement extends BaseElement {
 
     render() {
         return html`
-            test
             <vaadin-login-overlay
                 description="Please login using your credentials"
                 opened
-                style="background: red; width: 100px; height: 100px;"
                 @login=${this.login}
             >
                 <h3 slot="title" style="color: #fff">${config.title}</h3>
