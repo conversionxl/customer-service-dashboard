@@ -4,7 +4,7 @@ import resolve from "@rollup/plugin-node-resolve";
 import nodePolyfills from "rollup-plugin-polyfill-node";
 
 module.exports = {
-    input: ".tsc/index.js",
+    input: "./build/index.js",
     output: {
         dir: "./public/js",
         format: "esm",

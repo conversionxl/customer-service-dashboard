@@ -1,4 +1,5 @@
-/.tsc
-/node_modules
-/public/js
-/public/service-worker.js
+build
+node_modules
+public/js
+public/service-worker.js
+screenshots/**/failed
