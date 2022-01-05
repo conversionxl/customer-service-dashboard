@@ -2,7 +2,7 @@ import "@vaadin/vaadin-dialog";
 import "@vaadin/vaadin-text-field/vaadin-email-field";
 import { css, customElement, html, property, query } from "lit-element";
 import { nothing, render } from "lit-html";
-import objectPath from "object-path";
+// import objectPath from "object-path";
 import { Customer } from "../../models";
 import { notify } from "../../utilities";
 import { ViewElement } from "../../base-elements/ViewElement";
@@ -202,7 +202,7 @@ export class CXLCustomerDetailsElement extends ViewElement {
     _updateField(e) {
         console.log(e.target.name);
         console.log(e.target.value);
-        objectPath.set(this.item._updates, e.target.name, e.target.value);
+        // objectPath.set(this.item._updates, e.target.name, e.target.value);
         console.log(this.item);
         this.item[e.target.getAttribute("name")] = e.target.value;
         console.log(this.item._updates);
