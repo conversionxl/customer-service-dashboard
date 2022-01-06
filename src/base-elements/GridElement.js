@@ -1,6 +1,6 @@
 import { css, html, query } from "lit-element";
 import { BaseElement } from "./BaseElement";
-import { render } from "lit-html";
+import { render } from "lit";
 
 export class GridElement extends BaseElement {
     _baseRoute;

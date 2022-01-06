@@ -1,5 +1,5 @@
 import { css, customElement, html, property, query } from "lit-element";
-import { nothing } from "lit-html";
+import { nothing } from "lit";
 import {
     CustomerCollection,
     MembershipCollection,

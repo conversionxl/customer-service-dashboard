@@ -1,6 +1,6 @@
 import { Router } from "@vaadin/router";
 import "@vaadin/vaadin-notification";
-import { html, render } from "lit-html";
+import { html, render } from "lit";
 
 export const formatDate = (date) => new Date(date).toLocaleDateString();
 

@@ -1,7 +1,7 @@
 import "@vaadin/vaadin-dialog";
 import "@vaadin/vaadin-text-field/vaadin-email-field";
 import { css, customElement, html, property, query } from "lit-element";
-import { nothing, render } from "lit-html";
+import { nothing, render } from "lit";
 // import objectPath from "object-path";
 import { Customer } from "../../models";
 import { notify } from "../../utilities";
