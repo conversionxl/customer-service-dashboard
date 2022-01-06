@@ -1,24 +1,51 @@
+var __decorate =
+    (this && this.__decorate) ||
+    function (decorators, target, key, desc) {
+        var c = arguments.length,
+            r =
+                c < 3
+                    ? target
+                    : desc === null
+                    ? (desc = Object.getOwnPropertyDescriptor(target, key))
+                    : desc,
+            d;
+        if (
+            typeof Reflect === "object" &&
+            typeof Reflect.decorate === "function"
+        )
+            r = Reflect.decorate(decorators, target, key, desc);
+        else
+            for (var i = decorators.length - 1; i >= 0; i--)
+                if ((d = decorators[i]))
+                    r =
+                        (c < 3
+                            ? d(r)
+                            : c > 3
+                            ? d(target, key, r)
+                            : d(target, key)) || r;
+        return c > 3 && r && Object.defineProperty(target, key, r), r;
+    };
+import "@vaadin/vaadin-form-layout";
+import "@vaadin/vaadin-form-layout/vaadin-form-item";
+import "@vaadin/vaadin-select";
 import { css, customElement, html, property } from "lit-element";
-import { nothing, render } from "lit-html";
-import { cache } from "lit-html/directives/cache";
-import { ViewElement } from "../../base-elements/ViewElement";
 import { nothing } from "lit-html";
 import { cache } from "lit-html/directives/cache.js";
 import { config } from "../../config";
 import { Order } from "../../models";
 import { navigateExternal } from "../../utilities";
-import "../page/wp-page";
+import { ViewElement } from "../../base-elements/ViewElement";
 import "../refund/cxl-refund-grid";
 import "./cxl-order-details";
-
-@customElement("cxl-order-view")
-export class CXLOrderViewElement extends ViewElement {
-    @property({ type: Number }) _tabIndex = 0;
-
-    _itemType = Order;
+let CXLOrderViewElement = class CXLOrderViewElement extends ViewElement {
+    constructor() {
+        super(...arguments);
+        this._tabIndex = 0;
+        this._itemType = Order;
+    }
     static get styles() {
         return [
-            ...super.styles,
+            super.styles,
             css`
                 vaadin-split-layout {
                     height: 100%;
@@ -37,20 +64,17 @@ export class CXLOrderViewElement extends ViewElement {
             `,
         ];
     }
-
     async getItem() {
         const item = await super.getItem();
-
         await Promise.all([
             item.getRefunds(),
             item.getCoupons(),
             item.getCustomer(),
         ]);
-
         return item;
     }
-
     render() {
+        var _a, _b, _c, _d;
         return html`
             <vaadin-split-layout orientation="vertical">
                 <div class="full-height grid gap">
@@ -67,26 +91,33 @@ export class CXLOrderViewElement extends ViewElement {
                                 slot="suffix"
                             ></iron-icon>
                         </vaadin-button>
-                        <vaadin-button @click=${this.documentation}>
-                            Documentation
-                        </vaadin-button>
                     </div>
                     <cxl-order-details .item=${this.item}></cxl-order-details>
                 </div>
                 <div id="tabs">
                     <vaadin-tabs @selected-changed="${this._selectedChanged}">
                         <vaadin-tab>
-                            Refunds (${this.item?.refunds?.total ?? 0})
+                            Refunds
+                            (${(_c =
+                                (_b =
+                                    (_a = this.item) === null || _a === void 0
+                                        ? void 0
+                                        : _a.refunds) === null || _b === void 0
+                                    ? void 0
+                                    : _b.total) !== null && _c !== void 0
+                                ? _c
+                                : 0})
                         </vaadin-tab>
                     </vaadin-tabs>
                     <div id="tabContent">
                         ${cache(
                             this._tabIndex === 0
-                                ? html`
-                                      <cxl-refund-grid
-                                          order-id=${this.item?.id}
-                                      ></cxl-refund-grid>
-                                  `
+                                ? html`<cxl-refund-grid
+                                      order-id=${(_d = this.item) === null ||
+                                      _d === void 0
+                                          ? void 0
+                                          : _d.id}
+                                  ></cxl-refund-grid>`
                                 : nothing
                         )}
                     </div>
@@ -94,39 +125,18 @@ export class CXLOrderViewElement extends ViewElement {
             </vaadin-split-layout>
         `;
     }
-
     _selectedChanged(e) {
         this._tabIndex = e.detail.value;
     }
-
-    documentation() {
-        const substitute = {
-            "[[ORDER_LINK]]": `<a href="${config.wordpress.url}/wp-admin/post.php?post=${this.item?.id}&action=edit" target="_blank" rel="noreferrer noopener">Order Link</a>`,
-        };
-
-        const dialog = document.createElement("vaadin-dialog");
-
-        dialog.renderer = (root) => {
-            render(
-                html`
-                    <wp-page
-                        .substitute=${substitute}
-                        .page=${{ id: "1045387" }}
-                    >
-                    </wp-page>
-                `,
-                root
-            );
-        };
-
-        dialog.addEventListener("opened-changed", (event) => {
-            if (!event.detail.value) {
-                this.shadowRoot.removeChild(dialog);
-            }
-        });
-
-        this.shadowRoot.appendChild(dialog);
-
-        dialog.opened = true;
-    }
-}
+};
+__decorate(
+    [property({ type: Number })],
+    CXLOrderViewElement.prototype,
+    "_tabIndex",
+    void 0
+);
+CXLOrderViewElement = __decorate(
+    [customElement("cxl-order-view")],
+    CXLOrderViewElement
+);
+export { CXLOrderViewElement };
