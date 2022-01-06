@@ -1,7 +1,8 @@
 import { Router } from "@vaadin/router";
 import "@vaadin/vaadin-form-layout";
 import "@vaadin/vaadin-form-layout/vaadin-form-item";
-import { css, customElement, html, property } from "lit-element";
+import { css, html } from "lit";
+import { customElement, property } from "lit/decorators.js";
 import { Order } from "../../models";
 import { ViewElement } from "../../base-elements/ViewElement";
 

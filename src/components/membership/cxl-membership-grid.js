@@ -2,7 +2,8 @@ import "@vaadin/vaadin-button";
 import "@vaadin/vaadin-grid";
 import "@vaadin/vaadin-grid/vaadin-grid-filter-column";
 import "@vaadin/vaadin-grid/vaadin-grid-sort-column";
-import { customElement, html } from "lit-element";
+import { html } from "lit";
+import { customElement } from "lit/decorators.js";
 import { MembershipCollection } from "../../models";
 import { GridElement } from "../../base-elements/GridElement";
 

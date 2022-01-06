@@ -1,7 +1,8 @@
 import "@vaadin/vaadin-form-layout";
 import "@vaadin/vaadin-form-layout/vaadin-form-item";
 import "@vaadin/vaadin-split-layout";
-import { css, customElement, html, property } from "lit-element";
+import { css, html } from "lit";
+import { customElement, property } from "lit/decorators.js";
 import { nothing } from "lit";
 import { cache } from "lit/directives/cache.js";
 import { Coupon } from "../../models";

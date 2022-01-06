@@ -1,7 +1,8 @@
 import "@vaadin/vaadin-button";
 import "@vaadin/vaadin-dialog";
 import "@vaadin/vaadin-form-layout";
-import { css, property } from "lit-element";
+import { css } from "lit";
+import { property } from "lit/decorators.js";
 import { BaseElement } from "./BaseElement";
 
 export class ViewElement extends BaseElement {

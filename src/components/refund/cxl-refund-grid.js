@@ -1,7 +1,8 @@
 import "@vaadin/vaadin-button";
 import "@vaadin/vaadin-dialog";
 import "@vaadin/vaadin-form-layout";
-import { customElement, html, property } from "lit-element";
+import { html } from "lit";
+import { customElement, property } from "lit/decorators.js";
 import { RefundCollection } from "../../models";
 import { GridElement } from "../../base-elements/GridElement";
 

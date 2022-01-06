@@ -1,7 +1,8 @@
 import { Router } from "@vaadin/router";
 import "@vaadin/vaadin-text-field/vaadin-number-field";
 import "@vaadin/vaadin-text-field/vaadin-text-area";
-import { css, customElement, html, queryAll } from "lit-element";
+import { css, html } from "lit";
+import { customElement, queryAll } from "lit/decorators.js";
 import { Order, Refund } from "../../models";
 import { notification } from "../../utilities";
 import { ViewElement } from "../../base-elements/ViewElement";

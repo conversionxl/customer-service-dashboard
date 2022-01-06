@@ -1,7 +1,8 @@
 import "@vaadin/vaadin-button";
 import "@vaadin/vaadin-dialog";
 import "@vaadin/vaadin-form-layout";
-import { customElement, html } from "lit-element";
+import { html } from "lit";
+import { customElement } from "lit/decorators.js";
 import { CustomerCollection } from "../../models";
 import { GridElement } from "../../base-elements/GridElement";
 import "./cxl-customer-view";

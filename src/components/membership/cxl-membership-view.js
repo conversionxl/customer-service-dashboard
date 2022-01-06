@@ -1,6 +1,7 @@
 import "@vaadin/vaadin-form-layout";
 import "@vaadin/vaadin-form-layout/vaadin-form-item";
-import { css, customElement, html } from "lit-element";
+import { css, html } from "lit";
+import { customElement } from "lit/decorators.js";
 import { Membership } from "../../models";
 import { navigate } from "../../utilities";
 import { ViewElement } from "../../base-elements/ViewElement";

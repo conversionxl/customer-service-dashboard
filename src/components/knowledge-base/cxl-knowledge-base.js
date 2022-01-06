@@ -1,5 +1,6 @@
 import "@vaadin/vaadin-accordion";
-import { css, customElement, html } from "lit-element";
+import { css, html } from "lit";
+import { customElement } from "lit/decorators.js";
 import { BaseElement } from "../../base-elements/BaseElement";
 
 @customElement("cxl-knowledge-base")

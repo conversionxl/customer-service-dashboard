@@ -1,5 +1,6 @@
 import "@vaadin/vaadin-text-field";
-import { css, customElement, html } from "lit-element";
+import { css, html } from "lit";
+import { customElement } from "lit/decorators.js";
 import { Refund } from "../../models";
 import { ViewElement } from "../../base-elements/ViewElement";
 

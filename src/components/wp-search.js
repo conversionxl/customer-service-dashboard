@@ -1,5 +1,5 @@
-import { css, customElement, html, property, query } from "lit-element";
-import { nothing } from "lit";
+import { css, html, nothing } from "lit";
+import { customElement, property, query } from "lit/decorators.js";
 import {
     CustomerCollection,
     MembershipCollection,

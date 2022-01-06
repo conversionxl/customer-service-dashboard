@@ -1,5 +1,6 @@
 import "@vaadin/vaadin-button";
-import { css, customElement, html, query } from "lit-element";
+import { css, html } from "lit";
+import { customElement, query } from "lit/decorators.js";
 import { Subscription } from "../../models";
 import { navigate } from "../../utilities";
 import { ViewElement } from "../../base-elements/ViewElement";
