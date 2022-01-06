@@ -1,6 +1,7 @@
-import { css, html, query } from "lit-element";
+import { css, html } from "lit";
+import { query } from "lit/decorators.js";
 import { BaseElement } from "./BaseElement";
-import { render } from "lit-html";
+import { render } from "lit";
 
 export class GridElement extends BaseElement {
     _baseRoute;

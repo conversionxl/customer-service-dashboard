@@ -1,4 +1,5 @@
-import { css, customElement, html, property } from "lit-element";
+import { css, html } from "lit";
+import { customElement, property } from "lit/decorators.js";
 import { Coupon } from "../../models";
 import { ViewElement } from "../../base-elements/ViewElement";
 

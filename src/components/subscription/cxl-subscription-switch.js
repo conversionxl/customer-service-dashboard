@@ -1,6 +1,7 @@
 import "@vaadin/vaadin-combo-box";
 import "@vaadin/vaadin-text-field";
-import { css, customElement, html, query } from "lit-element";
+import { css, html } from "lit";
+import { customElement, query } from "lit/decorators.js";
 import { Subscription } from "../../models";
 import { ViewElement } from "../../base-elements/ViewElement";
 import "../product/cxl-product-grid";

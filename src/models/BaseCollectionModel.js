@@ -1,6 +1,6 @@
 import { logout, measure, notify } from "../utilities";
 import { wooCommerce } from "../WooCommerce";
-import { html } from "lit-html";
+import { html } from "lit";
 
 export class BaseCollectionModel {
     _itemType;

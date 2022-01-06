@@ -1,9 +1,10 @@
 import "@vaadin/vaadin-form-layout";
 import "@vaadin/vaadin-form-layout/vaadin-form-item";
 import "@vaadin/vaadin-select";
-import { css, customElement, html, property } from "lit-element";
-import { nothing } from "lit-html";
-import { cache } from "lit-html/directives/cache.js";
+import { css, html } from "lit";
+import { customElement, property } from "lit/decorators";
+import { nothing } from "lit";
+import { cache } from "lit/directives/cache.js";
 import { config } from "../../config";
 import { Order } from "../../models";
 import { navigateExternal } from "../../utilities";

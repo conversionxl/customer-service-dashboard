@@ -1,5 +1,6 @@
 import "@vaadin/vaadin-icons";
-import { css, customElement, html } from "lit-element";
+import { css, html } from "lit";
+import { customElement } from "lit/decorators.js";
 import { config } from "../../config";
 import { Subscription } from "../../models";
 import { navigate, navigateExternal } from "../../utilities";

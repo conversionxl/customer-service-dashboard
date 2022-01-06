@@ -4,14 +4,8 @@ import "@vaadin/vaadin-app-layout";
 import "@vaadin/vaadin-app-layout/vaadin-drawer-toggle";
 import "@vaadin/vaadin-icon";
 import "@vaadin/vaadin-tabs";
-import {
-    css,
-    customElement,
-    html,
-    LitElement,
-    property,
-    query,
-} from "lit-element";
+import { css, html, LitElement } from "lit";
+import { customElement, property, query } from "lit/decorators.js";
 import { routes } from "../../routes";
 import { navigate } from "../../utilities";
 

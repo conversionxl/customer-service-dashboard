@@ -1,4 +1,4 @@
-import { svg } from "lit-html";
+import { svg } from "lit";
 
 export const wordpress = svg`
     <g fill="#464342">
