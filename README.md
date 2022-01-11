@@ -1,6 +1,6 @@
 # CXL - Customer Service Dashboard
 
--   [Netlify - Main Branch](https://reverent-liskov-394b6c.netlify.app/)
+-   [Netlify - Develop Branch](https://cxl-dashboard.netlify.app/)
 
 ## Get started
 
