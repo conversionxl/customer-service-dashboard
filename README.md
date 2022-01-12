@@ -21,3 +21,7 @@ $ npm run start
 ```
 $ npm run start:production
 ```
+
+---
+
+[Documentation](docs/INDEX.md)
